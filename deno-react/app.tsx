@@ -20,6 +20,10 @@ const App = () => {
       .then(data => console.log(data));
   }
 
+  React.useEffect(() => {
+    fetcAttendees();
+  }, []);
+
   return (
     <div>
       <h1>Hello Quantox conf!</h1>
