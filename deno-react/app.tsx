@@ -15,11 +15,14 @@ const App = () => {
   const [count, setCount] = React.useState(0);
 
   const fetcAttendees = () => {
-    fetch('http://localhost:3000/api/v1/attendees')
+    fetch(
+      "http://localhost:3000/api/v1/attendees",
+      { method: "GET", headers: { 'Content-Type': 'application/json' } },
+    )
       .then((response) => response.json())
-      .then(data => console.log(data));
-  }
-
+      .then((data) => console.log(data));
+  };
+  
   React.useEffect(() => {
     fetcAttendees();
   }, []);
