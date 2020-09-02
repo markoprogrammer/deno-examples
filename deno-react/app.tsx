@@ -16,13 +16,13 @@ const App = () => {
 
   const fetcAttendees = () => {
     fetch('http://localhost:3000/api/v1/attendees')
-      .then((response) => response.json());
+      .then((response) => response.json())
       .then(data => console.log(data));
   }
 
-  // React.useEffect(() => {
-  //   fetcAttendees();
-  // }, []);
+  React.useEffect(() => {
+    fetcAttendees();
+  }, []);
 
   return (
     <div>
