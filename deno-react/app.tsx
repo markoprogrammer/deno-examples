@@ -15,14 +15,16 @@ const App = () => {
   const [count, setCount] = React.useState(0);
 
   const fetcAttendees = () => {
-    fetch(
-      "http://localhost:3000/api/v1/attendees",
-      { method: "GET", headers: { 'Content-Type': 'application/json' } },
-    )
+    const url = "http://localhost:3000/api/v1/attendees";
+    const options = {
+      method: "GET",
+      headers: { "Content-Type": "application/json" },
+    };
+    fetch(url, options)
       .then((response) => response.json())
       .then((data) => console.log(data));
   };
-  
+
   React.useEffect(() => {
     fetcAttendees();
   }, []);
@@ -30,7 +32,7 @@ const App = () => {
   return (
     <div>
       <h1>Hello Quantox conf!</h1>
-      <button onClick={() => fetcAttendees()}>Click the 🦕</button>
+      <button className="button" onClick={() => fetcAttendees()}>Click the 🦕</button>
       <p>You clicked the 🦕 {count} times</p>
     </div>
   );
