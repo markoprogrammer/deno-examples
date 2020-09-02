@@ -7,12 +7,18 @@ declare global {
       div: any;
       h1: any;
       p: any;
+      table: any;
+      thead: any;
+      tbody: any;
+      tr: any;
+      th: any;
+      td: any;
     }
   }
 }
 
 const App = () => {
-  const [count, setCount] = React.useState(0);
+  const [attendees, setAttendees] = React.useState([]);
 
   const fetcAttendees = () => {
     const url = "http://localhost:3000/api/v1/attendees";
@@ -22,18 +28,39 @@ const App = () => {
     };
     fetch(url, options)
       .then((response) => response.json())
-      .then((data) => console.log(data));
+      .then((data) => setAttendees(data));
   };
 
-  React.useEffect(() => {
-    fetcAttendees();
-  }, []);
+  // React.useEffect(() => {
+  //   fetcAttendees();
+  // }, []);
 
   return (
-    <div>
-      <h1>Hello Quantox conf!</h1>
-      <button className="button" onClick={() => fetcAttendees()}>Click the 🦕</button>
-      <p>You clicked the 🦕 {count} times</p>
+    <div className="centered-rows m-6">
+      <h1 className="title has-text-centered my-3">Hello Quantox conf!</h1>
+      <div className="centered-rows is-full my-3">
+        <button className="button is-primary" onClick={() => fetcAttendees()}>Get Attendees 🦕</button>
+      </div>
+      <table className="table">
+        <thead>
+              <tr>
+                <th>No.</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Age</th>
+              </tr>
+            </thead>
+          <tbody>
+          {attendees.map((attendee: any, index: number) => (
+            <tr key={index}>
+              <th>{(index + 1) + '.'}</th>
+              <td>{attendee.name}</td>
+              <th>{attendee.email}</th>
+              <td>{attendee.age}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </div>
   );
 };

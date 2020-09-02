@@ -4,7 +4,7 @@ post http://localhost:3000/api/v1/attendee HTTP/1.1
 content-type: application/json
 
 {
-    "name": "Marko123",
+    "name": "Petar",
     "email": "marko.manojlovic@quantox.com",
-    "age": 30
+    "age": 29
 }
