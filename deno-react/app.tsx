@@ -14,10 +14,16 @@ declare global {
 const App = () => {
   const [count, setCount] = React.useState(0);
 
+  const fetcAttendees = () => {
+    fetch('http://localhost:3000/api/v1/attendees').then((response) => {
+      console.log(response);
+    });
+  }
+
   return (
     <div>
       <h1>Hello Quantox conf!</h1>
-      <button onClick={() => setCount(count + 1)}>Click the 🦕</button>
+      <button onClick={() => fetcAttendees()}>Click the 🦕</button>
       <p>You clicked the 🦕 {count} times</p>
     </div>
   );
