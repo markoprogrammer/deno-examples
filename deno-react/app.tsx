@@ -20,9 +20,9 @@ const App = () => {
       .then(data => console.log(data));
   }
 
-  React.useEffect(() => {
-    fetcAttendees();
-  }, []);
+  // React.useEffect(() => {
+  //   fetcAttendees();
+  // }, []);
 
   return (
     <div>
