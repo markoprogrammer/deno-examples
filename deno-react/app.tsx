@@ -15,9 +15,9 @@ const App = () => {
   const [count, setCount] = React.useState(0);
 
   const fetcAttendees = () => {
-    fetch('http://localhost:3000/api/v1/attendees').then((response) => {
-      console.log(response);
-    });
+    fetch('http://localhost:3000/api/v1/attendees')
+      .then((response) => response.json());
+      .then(data => console.log(data));
   }
 
   return (
