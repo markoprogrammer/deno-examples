@@ -14,10 +14,6 @@ export const addAttendee = async (context: any) => {
   try {
     let body: any = await context.request.body();
     const { name, email, age } = await body.value;
-    console.log('body', body);
-    console.log("name", name);
-    console.log("email", email);
-    console.log("age", age);
     const id = await attendeesCollections.insertOne({
       name: name,
       email: email,

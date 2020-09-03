@@ -1,0 +1,26 @@
+//1
+deno run https://raw.githubusercontent.com/markoprogrammer/deno-examples/master/deno-example-1.js
+
+//2
+deno run --allow-net https://raw.githubusercontent.com/markoprogrammer/deno-examples/master/deno-example-2.js
+
+//3
+deno fmt deno-example-3.ts
+
+//4
+deno run --allow-net deno-example-4.tsx
+localhost:8899
+
+//5
+deno run  --allow-plugin --allow-net  --allow-read --allow-write --unstable deno-example-5.ts
+
+//6
+deno test deno-example-6.ts
+
+//7
+deno run --allow-plugin --allow-net  --allow-read --allow-write --unstable server.ts
+lochost:3000
+
+//8
+deno run --allow-net --reload --allow-read app-server.tsx
+lochost:3001
