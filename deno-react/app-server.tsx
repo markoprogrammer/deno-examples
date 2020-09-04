@@ -1,6 +1,6 @@
 import React from "https://dev.jspm.io/react@16.13.1";
 import ReactDOMServer from "https://dev.jspm.io/react-dom@16.13.1/server";
-import { opine } from "https://deno.land/x/opine@0.20.2/mod.ts";
+import { opine } from "https://deno.land/x/opine@0.21.3/mod.ts";
 import { parse } from "https://deno.land/std@0.63.0/flags/mod.ts";
 import App from './app.tsx';
 
